@@ -1,10 +1,10 @@
-import React, {ChangeEvent, KeyboardEvent, useState} from 'react'
+import React, {ChangeEvent, useState, KeyboardEvent} from 'react'
 import Greeting from './Greeting'
 import {UserType} from "./HW3";
 
 type GreetingContainerPropsType = {
-    users: UserType[] // need to fix any
-    addUserCallback: (name: string) => void // need to fix any
+    users: Array<UserType>
+    addUserCallback: (name: string) => void
 }
 
 // более простой и понятный для новичков
@@ -13,42 +13,39 @@ type GreetingContainerPropsType = {
 // более современный и удобный для про :)
 // уровень локальной логики
 const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUserCallback}) => { // деструктуризация пропсов
-    const [name, setName] = useState<string>('') // need to fix any
-    const [error, setError] = useState<string>('') // need to fix any
+    const [name, setName] = useState<string>('')
+    const [error, setError] = useState<boolean>(false)
 
-    const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => { // need to fix any
-        const trimmedName = (e.currentTarget.value.trim()) // need to fix
-        if (trimmedName) {
-            setName(trimmedName)
-            error && setError('')
-        } else {
-            name && setName('')
-            setError('name is require')
-        }
+    const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => {
+        setName(e.currentTarget.value)
+        setError(false)
     }
 
     const addUser = () => {
-        addUserCallback(name)
-        alert(`Hello ${name}`)
-    }
-
-    const onEnter = (e: KeyboardEvent<HTMLInputElement>) => {
-        if (e.key === 'Enter' && name) {
-            addUser()
+        const validName = name.trim()
+        if (validName) {
+            addUserCallback(validName)
+            alert(`Hello ${validName}`)
             setName('')
+        } else {
+            setError(true)
         }
     }
 
-    const totalUsers = users.length // need to fix
+    const onKeyPressAddUser = (e: KeyboardEvent<HTMLInputElement>) => {
+        e.key === 'Enter' && name ? addUser() : setError(true)
+    }
+
+    const totalUsers = users.length
 
     return (
         <Greeting
             name={name}
             setNameCallback={setNameCallback}
             addUser={addUser}
-            onEnter={onEnter}
             error={error}
             totalUsers={totalUsers}
+            onKeyPressAddUser={onKeyPressAddUser}
         />
     )
 }

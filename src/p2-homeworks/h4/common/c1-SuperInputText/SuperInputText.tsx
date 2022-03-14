@@ -1,4 +1,4 @@
-import React, {ChangeEvent, DetailedHTMLProps, InputHTMLAttributes, KeyboardEvent} from 'react'
+import React, {ChangeEvent, DetailedHTMLProps, InputHTMLAttributes, KeyboardEvent, useState} from 'react'
 import s from './SuperInputText.module.css'
 
 // тип пропсов обычного инпута
@@ -12,7 +12,6 @@ type SuperInputTextPropsType = DefaultInputPropsType & { // и + ещё проп
     error?: string
     spanClassName?: string
 }
-
 const SuperInputText: React.FC<SuperInputTextPropsType> = (
     {
         type, // достаём и игнорируем чтоб нельзя было задать другой тип инпута
@@ -39,7 +38,7 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
     }
 
     const finalSpanClassName = `${s.error} ${spanClassName ? spanClassName : ''}`
-    const finalInputClassName = `${s.input} ${error ? s.errorInput : s.superInput} ${className}` // need to fix with (?:) and s.superInput
+    const finalInputClassName = `${error ? s.errorInput : s.superInput} ${className}` // need to fix with (?:) and s.superInput
 
     return (
         <>

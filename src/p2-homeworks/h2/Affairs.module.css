@@ -22,3 +22,7 @@
 .affair__coll {
     margin-left: 20px;
 }
+
+.active{
+    color: red;
+}

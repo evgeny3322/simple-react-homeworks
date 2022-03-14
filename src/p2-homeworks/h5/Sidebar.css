@@ -62,6 +62,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .bm-item {
     display: inline-block;
     color: red;
+    height: 30px;
 }
 
 /* Styling of overlay */

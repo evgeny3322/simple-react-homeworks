@@ -1,37 +1,37 @@
 import React, {ChangeEvent, KeyboardEvent} from 'react'
 import s from './Greeting.module.css'
-import SuperInputText from "../h4/common/c1-SuperInputText/SuperInputText";
 
 type GreetingPropsType = {
-    name: string // need to fix any
-    setNameCallback: (e: ChangeEvent<HTMLInputElement>) => void // need to fix any
-    addUser: () => void // need to fix any
-    onEnter: (e: KeyboardEvent<HTMLInputElement>) => void
-    error: string // need to fix any
-    totalUsers: number // need to fix any
+    name: string
+    setNameCallback: (e: ChangeEvent<HTMLInputElement>) => void
+    addUser: () => void
+    error: boolean
+    totalUsers: number
+    onKeyPressAddUser: (e: KeyboardEvent<HTMLInputElement>) => void
 }
 
-// презентационная компонента (для верстальщика)
 const Greeting: React.FC<GreetingPropsType> = (
-    {name, setNameCallback, addUser, onEnter, error, totalUsers} // деструктуризация пропсов
+    {name, setNameCallback, addUser, error, totalUsers, onKeyPressAddUser}
 ) => {
-    const inputClass = error ? s.errorInput : s.input // need to fix with (?:)
+    const inputClass = error ? s.error : s.trueClass
 
     return (
-        <div className={s.inputBlock}>
-            <div>
-                <input
-                    className={inputClass}
-                    value={name}
-                    onChange={setNameCallback}
-                    onKeyDown={onEnter}
-                    onBlur={setNameCallback}
-                />
-                <div className={s.error}>{error}</div>
+        <div className={s.inputClass}>
+            <input value={name}
+                   onChange={setNameCallback}
+                   onKeyPress={onKeyPressAddUser}
+                   className={inputClass}/>
+            <button disabled={error}
+                    onClick={addUser}
+                    className={s.button}>
+                add
+            </button>
+            <span className={s.spanClass}>
+                {totalUsers}
+            </span>
+            <div className={s.textError}>
+                {error && 'error: uncorrected name'}
             </div>
-            <button className={s.button} onClick={addUser} disabled={!name}>add</button>
-            <div className={s.total}>{totalUsers}</div>
-
         </div>
     )
 }
