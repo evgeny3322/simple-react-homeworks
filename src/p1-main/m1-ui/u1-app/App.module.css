@@ -1,2 +1,10 @@
 .App {
+    background: linear-gradient(90deg, #af86ff, #144025b8);
+}
+
+.title{
+    font-family: Century Gothic;
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
 }

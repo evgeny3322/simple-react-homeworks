@@ -30,7 +30,7 @@ const Greeting: React.FC<GreetingPropsType> = (
                 <div className={s.error}>{error}</div>
             </div>
             <button className={s.button} onClick={addUser} disabled={!name}>add</button>
-            <div>{totalUsers}</div>
+            <div className={s.total}>{totalUsers}</div>
 
         </div>
     )

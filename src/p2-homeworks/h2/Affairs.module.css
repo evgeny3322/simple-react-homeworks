@@ -1,9 +1,24 @@
-.someClass {
+.titleAffairs {
+    font-family: Century Gothic;
+    font-weight: bold;
+    text-align: center;
+    font-size: 15px;
+}
 
+.blockButton {
+    text-align: center;
 }
-.affair{
+
+.blockAffairs {
+    margin: 0 auto;
+    width: 221px;
+}
+
+.affair {
     display: flex;
+    justify-content: space-between;
 }
-.affair__coll{
+
+.affair__coll {
     margin-left: 20px;
 }

@@ -1,5 +1,14 @@
+.titleGreeting {
+    font-family: Century Gothic;
+    font-weight: bold;
+    text-align: center;
+    font-size: 15px;
+}
+
 .inputBlock {
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .button {
@@ -12,18 +21,25 @@
 }
 
 .input {
-    background: green;
+    background: white;
 }
 
 .input:focus {
     outline: none;
 }
 
-.error{
+.error {
     color: red;
 }
+
 .errorInput {
     color: green;
     outline: none;
     border: 2px solid red;
+}
+
+.total {
+    font-family: Century Gothic;
+    font-weight: bold;
+    margin-left: 10px;
 }

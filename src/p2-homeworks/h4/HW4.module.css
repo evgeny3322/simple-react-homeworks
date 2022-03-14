@@ -1,5 +1,12 @@
+.titleHome {
+    font-family: Century Gothic;
+    font-weight: bold;
+    text-align: center;
+    font-size: 15px;
+}
+
 .blue {
-    border-bottom: 5px solid blue;
+    border-bottom: 5px solid green;
 }
 
 .column {

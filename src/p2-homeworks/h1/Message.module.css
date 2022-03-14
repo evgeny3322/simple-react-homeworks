@@ -1,4 +1,9 @@
-
+.titleMessage{
+    font-family: Century Gothic;
+    font-weight: bold;
+    text-align: center;
+    font-size: 15px;
+}
 .speech__block{
     margin-right: 5px;
     margin-top: 8px;
@@ -13,8 +18,8 @@
 
 .speech__wrapper {
     padding: 30px 40px;
-    background-color: #b5e51f;
     display: flex;
+    justify-content: center;
 }
 
 .bubble {

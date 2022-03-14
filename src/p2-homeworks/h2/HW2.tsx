@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import Affairs from './Affairs'
+import s from './Affairs.module.css'
 
 // types
 export type AffairPriorityType = 'high' | 'low' | 'middle'
@@ -13,10 +14,10 @@ export type FilterType = 'all' | AffairPriorityType
 // constants
 const defaultAffairs: Array<AffairType> = [ // need to fix any
     {_id: 1, name: 'React', priority: 'high'},
-    {_id: 2, name: 'anime', priority: 'low'},
-    {_id: 3, name: 'games', priority: 'low'},
-    {_id: 4, name: 'work', priority: 'high'},
-    {_id: 5, name: 'html & css', priority: 'middle'},
+    {_id: 2, name: 'NodeJs', priority: 'low'},
+    {_id: 3, name: 'React Native', priority: 'low'},
+    {_id: 4, name: 'Work', priority: 'high'},
+    {_id: 5, name: 'Books', priority: 'middle'},
 ]
 
 // pure helper functions
@@ -25,7 +26,7 @@ export const filterAffairs = (affairs: Array<AffairType>, filter: FilterType): A
     else return affairs.filter(a => a.priority === filter)
 }
 export const deleteAffair = (affairs: Array<AffairType>, _id: number): Array<AffairType> => { // need to fix any
-    return affairs.filter(a=>a._id !== _id) // need to fix
+    return affairs.filter(a => a._id !== _id) // need to fix
 }
 
 function HW2() {
@@ -38,8 +39,7 @@ function HW2() {
     return (
         <div>
             <hr/>
-            homeworks 2
-
+            <h1 className={s.titleAffairs}>Homeworks #2</h1>
             {/*should work (должно работать)*/}
             <Affairs
                 data={filteredAffairs}
