@@ -1,0 +1,21 @@
+.titleHome {
+    font-family: Century Gothic;
+    font-weight: bold;
+    text-align: center;
+    font-size: 15px;
+}
+
+.contentBody {
+    text-align: center;
+}
+
+.spanEdit {
+    color: green;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+    width: 160px;
+    margin: auto;
+}
