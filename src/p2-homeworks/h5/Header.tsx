@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import s from './HW5.module.css'
 import './Sidebar.css'
 import {NavLink, useLocation, useNavigate, useParams} from 'react-router-dom'
 import {PATH} from "./Routes";
