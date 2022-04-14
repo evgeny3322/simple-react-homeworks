@@ -15,8 +15,6 @@ function PreJunior() {
             <HW3/>
             <HW4/>
             <HW6/>
-            <HW7/>
-            <HW8/>
         </div>
     )
 }

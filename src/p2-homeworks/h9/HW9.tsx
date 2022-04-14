@@ -1,9 +1,10 @@
 import React from 'react'
 import Clock from './Clock'
+import s from './hw9.module.css'
 
 function HW9() {
     return (
-        <div>
+        <div className={s.hw9}>
             <hr/>
             homeworks 9
 
