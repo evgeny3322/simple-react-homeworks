@@ -1,8 +1,9 @@
 .App {
     background: linear-gradient(90deg, #af86ff, #144025b8);
+    height: 100vh;
 }
 
-.title{
+.title {
     font-family: Century Gothic;
     font-weight: bold;
     text-align: center;
